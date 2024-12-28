@@ -26,12 +26,14 @@ export const typeDefs = `#graphql
     phoneNumber: String  
     userRole: UserRole   
     address: String
+    password: String
     createdAt: String
   }
 
   type Query {
     getEvents: [Event] 
     getUser(name: String): User
+    getUsers: [User]
   }
 
   type Mutation {

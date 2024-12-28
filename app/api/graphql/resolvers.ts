@@ -20,7 +20,11 @@ export const resolvers = {
         getUser: async (_: unknown, {name}: CreateUserArgs) => {
             const user = await db.select().from(users).where(eq(users.name, name));
             return user;
-        }
+        },
+        getUsers: async () => {
+            const allUsers = await db.select().from(users);
+            return allUsers;
+        },
     },
     Mutation: {
         createUser: async (
